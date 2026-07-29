@@ -129,29 +129,6 @@ OpenCanary-Wazuh-SOC-Lab/
 
 ---
 
-## Screenshots
-
-### Wazuh Dashboard
-
-![Wazuh Dashboard](screenshots/01-wazuh-dashboard.png)
-
-### OpenCanary HTTP Alert
-
-![HTTP Alert](screenshots/02-http-alert.png)
-
-### OpenCanary SSH Alert
-
-![SSH Alert](screenshots/03-ssh-alert.png)
-
-### Nmap Scan
-
-![Nmap Scan](screenshots/04-nmap-scan.png)
-
-### OpenCanary Log
-
-![OpenCanary Log](screenshots/05-opencanary-log.png)
-
----
 
 ## Results
 
