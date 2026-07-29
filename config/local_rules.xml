@@ -1,0 +1,38 @@
+<!-- Local rules -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+<!-- Example -->
+<group name="local,syslog,sshd,">
+
+  <!--
+  Dec 10 01:02:02 host sshd[1234]: Failed none for root from 1.1.1.1 port 1066 ssh2
+  -->
+  <rule id="100001" level="5">
+    <if_sid>5716</if_sid>
+    <srcip>1.1.1.1</srcip>
+    <description>sshd: authentication failed from IP 1.1.1.1.</description>
+    <group>authentication_failed,pci_dss_10.2.4,pci_dss_10.2.5,</group>
+  </rule>
+
+</group>
+<group name="opencanary,">
+
+  <rule id="100100" level="10">
+    <decoded_as>json</decoded_as>
+    <field name="node_id">opencanary-1</field>
+    <field name="logtype">4000</field>
+    <description>OpenCanary SSH activity detected from $(src_host) to $(dst_host):$(dst_port)</description>
+    <group>opencanary,ssh,network_intrusion,</group>
+  </rule>
+
+  <rule id="100101" level="8">
+    <decoded_as>json</decoded_as>
+    <field name="node_id">opencanary-1</field>
+    <field name="logtype">3000</field>
+    <description>OpenCanary HTTP activity detected from $(src_host) to $(dst_host):$(dst_port)</description>
+    <group>opencanary,http,network_intrusion,</group>
+  </rule>
+
+</group>
